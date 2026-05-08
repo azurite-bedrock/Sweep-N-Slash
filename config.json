@@ -18,11 +18,11 @@
             },
             "marathon": {
                 "url": "github.com/azurite-bedrock/regolith-filters",
-                "version": "1.0.1"
+                "version": "1.1.1"
             },
-            "packer": {
-                "url": "github.com/MCDevKit/regolith-library",
-                "version": "1.0.3"
+            "parcel": {
+                "url": "github.com/azurite-bedrock/regolith-filters",
+                "version": "1.0.1"
             },
             "type_gen": {
                 "url": "github.com/Bedrock-OSS/regolith-filters",
@@ -91,7 +91,6 @@
                         "filter": "gametests",
                         "settings": {
                             "buildOptions": {
-                                "dropLabels": ["DEBUG", "LOGGING"],
                                 "bundle": true,
                                 "minify": true
                             },
@@ -111,7 +110,6 @@
                         "filter": "gametests",
                         "settings": {
                             "buildOptions": {
-                                "dropLabels": ["DEBUG", "LOGGING"],
                                 "bundle": true,
                                 "minify": true
                             },
@@ -135,7 +133,6 @@
                         "filter": "gametests",
                         "settings": {
                             "buildOptions": {
-                                "dropLabels": ["DEBUG", "LOGGING"],
                                 "bundle": true,
                                 "minify": false
                             },
@@ -155,7 +152,6 @@
                         "filter": "gametests",
                         "settings": {
                             "buildOptions": {
-                                "dropLabels": ["DEBUG", "LOGGING"],
                                 "bundle": true,
                                 "minify": false
                             },
@@ -212,9 +208,12 @@
                         "profile": "scripts"
                     },
                     {
-                        "filter": "packer",
+                        "filter": "parcel",
                         "settings": {
-                            "output": "SweepNSlash.mcaddon"
+                            "content_type": "addon",
+                            "output": "build/${config.name}-${git.tag ?? 'dev'}.mcpack",
+                            "compression_level": 6,
+                            "update_version_from_tag": true
                         }
                     }
                 ]
@@ -232,9 +231,12 @@
                         "profile": "scripts-gametest"
                     },
                     {
-                        "filter": "packer",
+                        "filter": "parcel",
                         "settings": {
-                            "output": "SweepNSlash-gametest.mcaddon"
+                            "content_type": "addon",
+                            "output": "build/${config.name}-${git.tag ?? 'dev'}-gametest.mcpack",
+                            "compression_level": 6,
+                            "update_version_from_tag": true
                         }
                     }
                 ]
