@@ -78,3 +78,5 @@ This project uses a dual-license model. See [NOTICE.md](NOTICE.md) for full deta
 | Project icon and logo   | [CC-BY-NC-SA-4.0](LICENSES/CC-BY-NC-SA-4.0.txt) |
 
 See [TRADEMARK.md](TRADEMARK.md) for the trademark policy. Trademark rights exist independently of, and are not granted by, either license.
+
+By contributing you agree to the licensing terms described in [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).

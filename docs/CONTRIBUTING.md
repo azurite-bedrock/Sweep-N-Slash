@@ -116,4 +116,4 @@ Discriminatory, harassing, or hostile behavior will not be tolerated and may res
 
 ## License
 
-By submitting a pull request, you agree that your contribution is licensed under the **MIT License** that covers this project, and that you have the rights to submit it under those terms.
+By submitting a pull request, you agree that your contribution is licensed under the **MIT License** or **CC-BY-NC-SA-4.0** that covers this project, and that you have the rights to submit it under those terms.
