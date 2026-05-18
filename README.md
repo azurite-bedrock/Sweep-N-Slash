@@ -3,7 +3,8 @@
 
 [![CurseForge Downloads](https://cf.way2muchnoise.eu/full_1104407_downloads.svg)](https://www.curseforge.com/minecraft-bedrock/addons/sweep-n-slash)
 [![Minecraft - Version](<https://img.shields.io/badge/Minecraft-v26.x_(Bedrock)-e04e14?label=Available%20For&labelColor=2d2d2d&color=e04e14>)](https://www.curseforge.com/minecraft-bedrock/addons/sweep-n-slash/files/all)
-[![GitHub License](https://img.shields.io/github/license/AnotherSeawhite/sweepnslash)](https://github.com/AnotherSeawhite/sweepnslash/blob/main/LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue)](LICENSES/MIT.txt)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/assets-CC--BY--NC--SA--4.0-lightgrey)](LICENSES/CC-BY-NC-SA-4.0.txt)
 [![Discord](https://badgen.net/discord/members/dAcghG992N?icon=discord)](https://discord.gg/dAcghG992N)
 
 </div>
@@ -29,10 +30,10 @@ This project uses [Regolith](https://github.com/Bedrock-OSS/regolith) as its bui
 
 ## Prerequisites
 
-| Tool                                                         | Purpose                                                       |
-| ------------------------------------------------------------ | ------------------------------------------------------------- |
-| [Regolith](https://github.com/Bedrock-OSS/regolith/releases) | Build pipeline runner                                         |
-| [Node.js](https://nodejs.org/)                               | Required by the [`gametests`](https://github.com/Bedrock-OSS/regolith-filters/tree/master/gametests) filter for TypeScript compilation |
+| Tool                                                         | Purpose                                                                                                                                                                                                                                                                                          |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Regolith](https://github.com/Bedrock-OSS/regolith/releases) | Build pipeline runner                                                                                                                                                                                                                                                                            |
+| [Node.js](https://nodejs.org/)                               | Required by the [`gametests`](https://github.com/Bedrock-OSS/regolith-filters/tree/master/gametests) filter for TypeScript compilation                                                                                                                                                           |
 | [Deno](https://deno.com/)                                    | Required by the [`marathon`](https://github.com/azurite-bedrock/regolith-filters/tree/main/marathon), [`shush`](https://github.com/azurite-bedrock/regolith-filters/tree/main/shush) and [`parcel`](https://github.com/azurite-bedrock/regolith-filters/tree/main/parcel) filters (from Azurite) |
 
 ## Setup
@@ -66,3 +67,14 @@ For example:
 regolith run dev
 regolith run pack
 ```
+
+# Licensing
+
+This project uses a dual-license model. See [NOTICE.md](NOTICE.md) for full details.
+
+| Component               | License                                         |
+| ----------------------- | ----------------------------------------------- |
+| Code, scripts, and data | [MIT](LICENSES/MIT.txt)                         |
+| Project icon and logo   | [CC-BY-NC-SA-4.0](LICENSES/CC-BY-NC-SA-4.0.txt) |
+
+See [TRADEMARK.md](TRADEMARK.md) for the trademark policy. Trademark rights exist independently of, and are not granted by, either license.
