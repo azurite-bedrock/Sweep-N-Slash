@@ -70,14 +70,14 @@ export function tickIndicator(player: Player, currentTick: number, addonToggle: 
             (Math.abs(fallDist) >= 1.5 && item && itemHasFlag(item, 'mace')) ||
             status.chargeAttacking
         ) {
-            player.triggerEvent('sweepnslash:mace');
+            player.triggerEvent('sweepnslash:disable');
             status.mace = true;
         } else {
-            player.triggerEvent('sweepnslash:not_mace');
+            player.triggerEvent('sweepnslash:enable');
             status.mace = false;
         }
     } else {
-        player.triggerEvent('sweepnslash:mace');
+        player.triggerEvent('sweepnslash:disable');
     }
 
     // Cooldown UI
