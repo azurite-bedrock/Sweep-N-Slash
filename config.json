@@ -10,23 +10,23 @@
         "filterDefinitions": {
             "gametests": {
                 "url": "github.com/Bedrock-OSS/regolith-filters",
-                "version": "1.7.3"
+                "version": "1.7.4"
             },
             "shush": {
                 "url": "github.com/azurite-bedrock/regolith-filters",
-                "version": "1.0.0"
+                "version": "1.0.3"
             },
             "marathon": {
                 "url": "github.com/azurite-bedrock/regolith-filters",
-                "version": "1.1.1"
+                "version": "1.2.0"
             },
             "parcel": {
                 "url": "github.com/azurite-bedrock/regolith-filters",
-                "version": "1.0.1"
+                "version": "1.0.2"
             },
             "type_gen": {
                 "url": "github.com/Bedrock-OSS/regolith-filters",
-                "version": "1.4.0"
+                "version": "1.4.2"
             }
         },
         "formatVersion": "1.4.0",
