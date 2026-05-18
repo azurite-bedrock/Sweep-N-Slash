@@ -3,7 +3,7 @@
 
 [![CurseForge Downloads](https://cf.way2muchnoise.eu/full_1104407_downloads.svg)](https://www.curseforge.com/minecraft-bedrock/addons/sweep-n-slash)
 [![Minecraft - Version](<https://img.shields.io/badge/Minecraft-v26.x_(Bedrock)-e04e14?label=Available%20For&labelColor=2d2d2d&color=e04e14>)](https://www.curseforge.com/minecraft-bedrock/addons/sweep-n-slash/files/all)
-[![GitHub License](https://img.shields.io/github/license/AnotherSeawhite/sweepnslash)](https://github.com/AnotherSeawhite/sweepnslash/blob/main/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/AnotherSeawhite/sweepnslash)](https://github.com/AnotherSeawhite/sweepnslash/blob/main/LICENSE.md)
 [![Discord](https://badgen.net/discord/members/dAcghG992N?icon=discord)](https://discord.gg/dAcghG992N)
 
 </div>
