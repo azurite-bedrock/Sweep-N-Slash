@@ -1,22 +1,21 @@
 import { Vec3 } from '@bedrock-oss/bedrock-boost';
 import { WeaponStats } from '../importStats';
 
-const daggerSecondHitMap = new Map<string, boolean>();
+const hitMap = new Map<string, boolean>();
+const comboMap = new Map<string, number>();
 
 export const alylicaDungeons: WeaponStats[] = [
     {
         id: 'dungeons:sword',
         attackSpeed: 1.6,
         damage: 6,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
     },
     {
         id: 'dungeons:diamond_sword',
         attackSpeed: 1.6,
         damage: 9,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: ({ mc }) => {
             function random(min: number, max: number) {
                 return Math.random() * (max - min) + min;
@@ -40,8 +39,7 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:hawkbrand',
         attackSpeed: 1.6,
         damage: 7,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: ({ player, target, crit, iframes, sweptEntities }) => {
             sweptEntities.forEach((e) => {
                 e.addTag('prevent_effect');
@@ -94,15 +92,15 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:katana',
         attackSpeed: 1.4,
         damage: 7,
-        isWeapon: true,
-        sweep: true,
+        regularKnockback: 1.352,
+        regularVerticalKnockback: 0.8955,
+        flags: ['is_weapon', 'sweep'],
     },
     {
         id: 'dungeons:claymore',
         attackSpeed: 1.2,
         damage: 8.5,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: ({ specialCheck }) => {
             return {
                 sprintKnockback: specialCheck || undefined,
@@ -114,40 +112,39 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:cutlass',
         attackSpeed: 1.7,
         damage: 5.5,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
     },
     {
         id: 'dungeons:daggers',
         attackSpeed: 3,
-        damage: 4,
-        isWeapon: true,
+        damage: 3,
+        flags: ['is_weapon'],
         beforeEffect: ({ player, target, specialCheck, iframes, sprintKnockback }) => {
-            let daggerHit = false;
+            let hit = false;
             if (specialCheck) {
-                if (iframes && (daggerSecondHitMap.get(target.id) ?? false)) {
-                    daggerHit = true;
-                    daggerSecondHitMap.set(target.id, false);
+                if (iframes && (hitMap.get(target.id) ?? false)) {
+                    hit = true;
+                    hitMap.set(target.id, false);
                     player.playAnimation('animation.player.attack_daggers');
                 } else if (!iframes) {
                     player.dimension.playSound('weapon.daggers.hit', player.location, {
                         volume: 0.6,
                     });
-                    daggerSecondHitMap.set(target.id, true);
+                    hitMap.set(target.id, true);
                 }
             }
 
             return {
-                critAttack: daggerHit || undefined,
-                critMultiplier: daggerHit ? 2.2 : undefined,
-                sprintKnockback: daggerHit || undefined,
-                enchantedKnockback: daggerHit && !sprintKnockback ? 0.58 : undefined,
+                critAttack: hit || false,
+                critMultiplier: hit ? 2.5 : undefined,
+                sprintKnockback: hit || undefined,
+                enchantedKnockback: hit && !sprintKnockback ? 0.58 : undefined,
 
-                cancelDurability: daggerHit,
+                cancelDurability: hit,
 
-                critParticle: daggerHit ? 'dungeons:daggers_strike' : undefined,
-                critSound: daggerHit ? 'weapon.daggers.hit' : undefined,
-                critOffset: daggerHit ? Vec3.from(0, -1, 0) : undefined,
+                critParticle: hit ? 'dungeons:daggers_strike' : undefined,
+                critSound: hit ? 'weapon.daggers.hit' : undefined,
+                critOffset: hit ? Vec3.from(0, -1, 0) : undefined,
             };
         },
     },
@@ -155,15 +152,18 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:rapier',
         attackSpeed: 2,
         damage: 5,
-        isWeapon: true,
-        sweep: true,
+        regularKnockback: 1.152,
+        enchantedKnockback: 2.186,
+        regularVerticalKnockback: 0.5955,
+        enchantedVerticalKnockback: 0.8,
+        flags: ['is_weapon', 'sweep'],
     },
     {
         id: 'dungeons:battlestaff',
         attackSpeed: 1.5,
         damage: 6.5,
-        isWeapon: true,
-        sweep: true,
+        regularVerticalKnockback: 0.9955,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: () => {
             return {
                 sweepPitch: 0.8,
@@ -174,14 +174,13 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:axe',
         attackSpeed: 1.4,
         damage: 7,
-        isWeapon: true,
+        flags: ['is_weapon'],
     },
     {
         id: 'dungeons:double_axe',
         attackSpeed: 1.2,
         damage: 8.5,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: ({ player }) => {
             return {
                 sweepLocation: Vec3.from(player.location),
@@ -195,8 +194,7 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:whirlwind',
         attackSpeed: 1.2,
         damage: 8.5,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: ({ system, player, target, specialCheck, crit, sprintKnockback }) => {
             if (!crit && !sprintKnockback && specialCheck) {
                 const dimension = target.dimension;
@@ -225,8 +223,7 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:cursed_axe',
         attackSpeed: 1.2,
         damage: 8.5,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         beforeEffect: ({ player }) => {
             return {
                 sweepLocation: Vec3.from(player.location),
@@ -240,7 +237,7 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:coral_blade',
         attackSpeed: 1.8,
         damage: 5,
-        isWeapon: true,
+        flags: ['is_weapon'],
         beforeEffect: ({ target, specialCheck, iframes }) => {
             const isInWater = target.isInWater && specialCheck && !iframes;
             return {
@@ -253,13 +250,13 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:tempest_knife',
         attackSpeed: 1.5,
         damage: 6,
-        isWeapon: true,
+        flags: ['is_weapon'],
     },
     {
         id: 'dungeons:chill_gale_knife',
         attackSpeed: 1.5,
         damage: 6,
-        isWeapon: true,
+        flags: ['is_weapon'],
         beforeEffect: ({ target, iframes }) => {
             if (iframes || target.getEffect('slowness')) return;
 
@@ -285,7 +282,7 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:resolute_tempest_knife',
         attackSpeed: 1.5,
         damage: 6,
-        isWeapon: true,
+        flags: ['is_weapon'],
         beforeEffect: ({ target, crit, iframes }) => {
             if (target.hasTag('prevent_effect')) return;
             target.addTag('prevent_effect');
@@ -316,14 +313,13 @@ export const alylicaDungeons: WeaponStats[] = [
         id: 'dungeons:soul_knife',
         attackSpeed: 1.5,
         damage: 6.5,
-        isWeapon: true,
+        flags: ['is_weapon'],
     },
     {
         id: 'dungeons:soul_scythe',
         attackSpeed: 1.3,
         damage: 6,
-        isWeapon: true,
-        sweep: true,
+        flags: ['is_weapon', 'sweep'],
         regularKnockback: 1.122,
         enchantedKnockback: 1.381,
         beforeEffect: ({ player, specialCheck }) => {
@@ -337,6 +333,28 @@ export const alylicaDungeons: WeaponStats[] = [
 
             return {
                 sweepVolume: 0,
+            };
+        },
+    },
+    {
+        id: 'dungeons:gauntlets',
+        attackSpeed: 2,
+        damage: 3,
+        flags: ['is_weapon'],
+        beforeEffect: ({ system, target, iframes, cooldown, utils }) => {
+            const comboCount = comboMap.get(target.id) ?? 1;
+            const hitTime = utils.getLastAttack(target)?.time
+                ? system.currentTick - (utils.getLastAttack(target)?.time ?? 0)
+                : 0;
+            if (cooldown === 1 && hitTime <= 14) {
+                comboMap.set(target.id, Math.min(comboCount ? comboCount + 1 : 1, 3));
+            } else if (iframes || cooldown !== 1) {
+                comboMap.set(target.id, 1);
+            }
+
+            return {
+                critAttack: comboCount <= 1 ? false : true,
+                critMultiplier: comboCount * 0.7,
             };
         },
     },
