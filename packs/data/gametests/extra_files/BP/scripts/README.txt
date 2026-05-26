@@ -13,7 +13,7 @@ If you wish to:
 
 Please visit the official GitHub repository:
 
-https://github.com/AnotherSeawhite/sweepnslash/
+https://github.com/azurite-bedrock/Sweep-N-Slash
 
 All development happens there. Pull requests and contributions are welcome
 through GitHub as well.
