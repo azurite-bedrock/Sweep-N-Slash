@@ -66,8 +66,6 @@ export function configForm(player: Player): void {
     const tag = player.hasTag('sweepnslash.config');
     const op = player.playerPermissionLevel == PlayerPermissionLevel.Operator;
 
-    console.log(`${player.getDynamicProperty(PlayerProperties.ActionBarChar)}`);
-
     const configFormArray: ModalFormStructure[] = [
         {
             type: 'label',
