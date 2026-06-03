@@ -30,12 +30,15 @@ sweepnslash.config.general.tipmessage=Oyuna Girişte İpucu Mesajı
 
 sweepnslash.config.personal.header=Kişisel Ayarlar
 sweepnslash.config.personal.indicator=Saldırı Göstergesi
-sweepnslash.config.personal.indicator.tooltip=Saldırı Göstergesi arayüzünü değiştirir. Eklentinin arayüzünde sorun yaşıyorsanız Geyser kullanmayı deneyin.
+sweepnslash.config.personal.indicator.tooltip=Saldırı Göstergesi arayüzünü değiştirir.
 sweepnslash.config.personal.indicator.crosshair=Nişangah
 sweepnslash.config.personal.indicator.hotbar=Hotbar
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Yok
 sweepnslash.config.personal.indicator.actionbar=Action Bar
+sweepnslash.config.personal.actionbar_char=Action Bar Attack Indicator Icon
+sweepnslash.config.personal.actionbar_char.placeholder=Enter a character (Default: _)
+sweepnslash.config.personal.actionbar_char.tooltip=Character text that will form Action Bar indicator.
 sweepnslash.config.personal.bowhitsound=Ok İsabet Sesi
 sweepnslash.config.personal.sweep.particles=Süpürme Partikülleri
 sweepnslash.config.personal.enchanted.particles=Büyülü İsabet Partikülleri
@@ -44,6 +47,19 @@ sweepnslash.config.personal.crit.particles=Kritik İsabet Partikülleri
 sweepnslash.config.personal.crit.sounds=Kritik İsabet Sesleri
 sweepnslash.config.personal.sweep.rgb=Süpürme RGB Rengi
 sweepnslash.config.save=Kaydet
+
+## Global Configuration Menu
+sweepnslash.config.globalconfig_tip=Operators can use '/sns:globalconfig' command to open Global Configuration menu.
+
+sweepnslash.globalconfig.command.description=Opens up global configuration menu for Sweep 'N Slash.
+sweepnslash.globalconfig.menu.title=Global Configuration Menu
+
+sweepnslash.globalconfig.description=Configure server-wide mechanics and manage baseline player preferences. Tailor gameplay elements to fit the server's style or disable interface components that conflict with other UIs.
+sweepnslash.globalconfig.force_toggle.description=Locks this setting server-wide to the chosen default, and hides it from the players' configuration menu.
+sweepnslash.globalconfig.default_toggle.description=Sets the default value for new players without affecting players who have already joined. Can be manually changed by players if not forced.
+sweepnslash.globalconfig.hide_description=Hide description for this menu
+sweepnslash.globalconfig.force_toggle=Force Option
+sweepnslash.globalconfig.default_toggle=Default Toggle
 
 sweepnslash.config.status.canceled=§cYapılandırma iptal edildi.
 sweepnslash.config.status.saved=§aYapılandırma kaydedildi.

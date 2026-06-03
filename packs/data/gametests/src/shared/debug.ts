@@ -1,5 +1,6 @@
-import { world } from '@minecraft/server';
 import { Logger, LogLevel, OutputType } from '@bedrock-oss/bedrock-boost';
+import { world } from '@minecraft/server';
+import { WorldProperties } from '../shared/game.ts';
 
 // Set all log levels to chat-only. Logger.getOutputConfig() returns the live
 // settings object, so mutating it affects all loggers globally.
@@ -19,7 +20,7 @@ export const logger = Logger.getLogger('sweepnslash', 'sns');
 
 export const Debug = {
     isEnabled(): boolean {
-        return world.getDynamicProperty('debug_mode') === true;
+        return world.getDynamicProperty(WorldProperties.DebugMode) === true;
     },
     error(...args: unknown[]): void {
         if (this.isEnabled()) logger.error(...args);

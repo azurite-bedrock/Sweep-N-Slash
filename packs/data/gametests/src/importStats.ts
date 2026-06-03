@@ -95,18 +95,22 @@ export type WeaponStats = {
     disableShield?: boolean;
     /**
      * Knockback distance (in blocks) without knockback enchantment.
+     * If undefined, falls back to 1.552
      */
     regularKnockback?: number;
     /**
      * Knockback distance (in blocks) with knockback enchantment and/or sprint knockback.
+     * If undefined, falls back to 2.586.
      */
     enchantedKnockback?: number;
     /**
      * Vertical knockback distance (in blocks) without knockback enchantment.
+     * If undefined, falls back to 0.7955.
      */
     regularVerticalKnockback?: number;
     /**
      * Vertical knockback distance (in blocks) with knockback enchantment and/or sprint knockback.
+     * If undefined, falls back to 1.
      */
     enchantedVerticalKnockback?: number;
     /**
@@ -162,13 +166,13 @@ export type WeaponStats = {
         sweepLevel?: number;
         /** Cancel durability reduction if true. */
         cancelDurability?: boolean;
-        /** Override regular attack knockback value, distance in blocks. */
+        /** Override regular attack knockback value, distance in blocks (default 1.552). */
         regularKnockback?: number;
-        /** Override enchanted knockback value, distance in blocks. */
+        /** Override enchanted knockback value, distance in blocks (default 2.586). */
         enchantedKnockback?: number;
-        /** Override vertical regular attack knockback value, distance in blocks. */
+        /** Override vertical regular attack knockback value, distance in blocks (default 0.7955). */
         regularVerticalKnockback?: number;
-        /** Override vertical enchanted attack knockback value, distance in blocks. */
+        /** Override vertical enchanted attack knockback value, distance in blocks (default 1). */
         enchantedVerticalKnockback?: number;
         /** Override sweep attack location (default: target's location). */
         sweepLocation?: Vec3;

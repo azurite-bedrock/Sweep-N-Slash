@@ -40,6 +40,9 @@ sweepnslash.config.personal.indicator.hotbar=Thanh Công Cụ
 sweepnslash.config.personal.indicator.geyser=Kiểu Bedrock
 sweepnslash.config.personal.indicator.none=Không có
 sweepnslash.config.personal.indicator.actionbar=Action Bar
+sweepnslash.config.personal.actionbar_char=Action Bar Attack Indicator Icon
+sweepnslash.config.personal.actionbar_char.placeholder=Enter a character (Default: _)
+sweepnslash.config.personal.actionbar_char.tooltip=Character text that will form Action Bar indicator.
 sweepnslash.config.personal.bowhitsound=Âm Thanh Khi Bắn Cung Trúng Mục Tiêu
 sweepnslash.config.personal.sweep.particles=Hiệu Ứng Quét Cạnh
 sweepnslash.config.personal.enchanted.particles=Hiệu Ứng Khi Trúng Bằng Vũ Khí Phù Phép
@@ -48,6 +51,19 @@ sweepnslash.config.personal.crit.particles=Hiệu Ứng Đòn Chí Mạng
 sweepnslash.config.personal.crit.sounds=Âm Thanh Đòn Chí Mạng
 sweepnslash.config.personal.sweep.rgb=Màu RGB Cho Đòn Quét Cạnh
 sweepnslash.config.save=Lưu
+
+## Global Configuration Menu
+sweepnslash.config.globalconfig_tip=Operators can use '/sns:globalconfig' command to open Global Configuration menu.
+
+sweepnslash.globalconfig.command.description=Opens up global configuration menu for Sweep 'N Slash.
+sweepnslash.globalconfig.menu.title=Global Configuration Menu
+
+sweepnslash.globalconfig.description=Configure server-wide mechanics and manage baseline player preferences. Tailor gameplay elements to fit the server's style or disable interface components that conflict with other UIs.
+sweepnslash.globalconfig.force_toggle.description=Locks this setting server-wide to the chosen default, and hides it from the players' configuration menu.
+sweepnslash.globalconfig.default_toggle.description=Sets the default value for new players without affecting players who have already joined. Can be manually changed by players if not forced.
+sweepnslash.globalconfig.hide_description=Hide description for this menu
+sweepnslash.globalconfig.force_toggle=Force Option
+sweepnslash.globalconfig.default_toggle=Default Toggle
 
 sweepnslash.config.status.canceled=§cĐã hủy cấu hình.
 sweepnslash.config.status.saved=§aĐã lưu cấu hình.
