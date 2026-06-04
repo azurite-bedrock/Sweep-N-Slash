@@ -233,6 +233,7 @@ export type EntityStats = {
     damageTakeMultiplier?: number;
     critDamageTakeMultiplier?: number;
     canTakeCrits?: boolean;
+    canTakeKnockback?: boolean;
     regularKnockbackTakeMultiplier?: number;
     enchantedKnockbackTakeMultiplier?: number;
     damageItem?: boolean;
