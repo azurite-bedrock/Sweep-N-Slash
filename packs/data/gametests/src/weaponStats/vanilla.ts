@@ -47,6 +47,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:wooden_spear',
         damage: 1,
         attackSpeed: 1.54,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {
@@ -61,6 +62,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:golden_spear',
         damage: 1,
         attackSpeed: 1.05,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {
@@ -75,6 +77,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:stone_spear',
         damage: 2,
         attackSpeed: 1.33,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {
@@ -89,6 +92,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:copper_spear',
         damage: 2,
         attackSpeed: 1.18,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {
@@ -103,6 +107,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:iron_spear',
         damage: 3,
         attackSpeed: 1.05,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {
@@ -117,6 +122,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:diamond_spear',
         damage: 4,
         attackSpeed: 0.95,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {
@@ -131,6 +137,7 @@ export const vanilla: WeaponStats[] = [
         id: 'minecraft:netherite_spear',
         damage: 5,
         attackSpeed: 0.87,
+        minReach: 2,
         reach: 4.5,
         flags: ['kinetic_weapon', 'custom_cooldown', 'is_weapon'],
         beforeEffect: () => {

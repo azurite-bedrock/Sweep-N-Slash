@@ -121,8 +121,8 @@ export function sprintKnockback(
     return isValid;
 }
 
-export function view(player: Player, distance = 3): Entity | null {
-    const targetEntity = player.getEntitiesFromViewDirection({
+export function view(player: Player, distance = 3, minDistance = 0): Entity | null {
+    const view = player.getEntitiesFromViewDirection({
         maxDistance: distance,
         excludeTypes: [
             'item',
@@ -137,7 +137,10 @@ export function view(player: Player, distance = 3): Entity | null {
             'falling_block',
             'ender_crystal',
         ],
-    })[0]?.entity;
+    })[0];
+    const targetEntity = view?.entity;
+    const dist = view?.distance;
+    if (dist < minDistance) return null;
     if (targetEntity && inanimate(targetEntity, { excludeTypes: ['minecraft:armor_stand'] })) {
         return null;
     }

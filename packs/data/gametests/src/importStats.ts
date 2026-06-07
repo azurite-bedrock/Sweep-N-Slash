@@ -126,6 +126,10 @@ export type WeaponStats = {
      */
     reach?: number;
     /**
+     * The minimum reach distance (in blocks) of the weapon. Note that this is only used for attack indicator range, and does not actually modify reach.
+     */
+    minReach?: number;
+    /**
      * Optional set of flags for defining special properties. Replaces previous boolean properties.
      */
     flags?: string[];

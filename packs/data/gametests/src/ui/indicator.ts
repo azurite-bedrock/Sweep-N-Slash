@@ -40,7 +40,7 @@ export function tickIndicator(player: Player, currentTick: number, addonToggle: 
     let cooldownSubtitle = ('§7' + indicatorText).repeat(Math.max(0, subGrey));
     cooldownSubtitle += ('§8' + indicatorText).repeat(subDarkGrey);
 
-    const inRange = view(player, stats?.reach);
+    const inRange = view(player, stats?.reach, stats?.minReach);
     const targetValid = !(inRange?.getComponent('health')?.currentValue! <= 0);
     const specialCheck = specialValid(currentTick, player, stats);
 
