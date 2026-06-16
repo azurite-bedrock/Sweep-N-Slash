@@ -3,8 +3,8 @@
 ## 0. Information
 
 Sweep 'N Slash completely disables the vanilla damage mechanics. Because of this, it is necessary to pre-define stats for the weapons to function correctly. This also means you can define any stats for any item, even if the item is not intended to be used as a weapon.
-
-Existing stats can be defined internally and/or by sending items data from external addons.
+> [!NOTE]
+> Existing stats can be re-defined internally and/or by sending items data from external addons.
 
 Overwrite orders work the same as how you order RP/BP in the game. The topmost addon will have the final stats.
 
@@ -16,7 +16,7 @@ You can also manually add stats inside the already compiled pack, but it's not r
 ## 2. Adding stats with item custom components
 
 You can add stats by using custom components for your items. This is useful for basic work if using script and/or IPC is not preferred.
-Note that stats added via IPC has higher priority and can be overwritten.
+Stats that are added via IPC have higher priority over custom components and can be overwritten.
 
 ### `sweepnslash:stats`
 
@@ -49,7 +49,7 @@ Array of strings, used for defining specific behavior of items. Below are possib
 First, install IPC for your addon from this website:
 https://github.com/OmniacDev/MCBE-IPC
 
-Or you can use the [prebuilt IPC pack](https://github.com/azurite-bedrock/Sweep-N-Slash-External-Pack-Example) for Sweep 'N Slash if you don't know what it does.
+You can also use the [prebuilt IPC pack](https://github.com/azurite-bedrock/Sweep-N-Slash-External-Pack-Example) for Sweep 'N Slash if you don't know what it does.
 
 Extract the zip file into scripts folder. After that, make a file or use an already existing file to define your stats on.
 
@@ -103,9 +103,10 @@ const weaponStats = [
 
 If the stats are not importing, turn on Debug Mode and reload the world to see if the stats are importing correctly.
 
-**NOTE:** It is _not_ recommended to set IPC pack's script version higher than the main add-on's script version.
+> [!WARNING]
+> It is _not_ recommended to set IPC pack's script version higher than the main add-on's script version.
 
-(Credits to Hog554, OmniacDev and theaddon for the help!)
+<!-- (Credits to Hog554, OmniacDev and theaddon for the help!) -->
 
 ## IPC Channels
 
@@ -190,5 +191,4 @@ As of 3.0.0, Sweep 'N Slash **no longer mutates `@minecraft/server` prototypes**
 | `entity.__playerHit`                  | Internal only (`playerHitMap`)                                         |
 | `entity.__lastAttack`                 | `utils.getLastAttack(entity)` in callbacks                             |
 | `player.__rawDamage`                  | Internal only (`rawDamageMap`)                                         |
-| `entity.__daggerSecondHit`            | Internal only (`daggerSecondHitMap`)                                   |
 | `player.__configLastClosed`           | Internal only (`configLastClosedMap`)                                  |
