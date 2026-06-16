@@ -11,9 +11,9 @@ Sweep 'N Slash is a focused project: it ports Java Edition 1.9 combat mechanics 
 In scope:
 
 - Bug fixes and correctness improvements to existing mechanics
-- Weapon stats (via custom components or MCBE-IPC)
+- Weapon stats
 - Performance optimizations
-- Cross-compatibility with other packs via the IPC layer
+- Cross-compatibility with other packs
 - Documentation and tooling
 
 Out of scope:
@@ -95,10 +95,12 @@ For obvious bugs or typos you can skip opening an issue first.
 
 ### For weapon stats
 
-Weapon stats can be contributed in two ways:
+Weapon stats can be made in two ways:
 
 - Custom components: add stat definitions directly in the pack's stats system
 - MCBE-IPC: register stats from an external pack via the IPC layer (v3.4.1)
+
+However, these can also be made by adding files in the repo.
 
 See the existing stats in `packs/data/gametests/src/stats/` and `src/weaponStats/` for examples.
 
