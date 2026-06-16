@@ -211,7 +211,7 @@
                         "filter": "parcel",
                         "settings": {
                             "content_type": "addon",
-                            "output": "build/${config.name}-${git.tag ?? 'dev'}.mcpack",
+                            "output": "build/${config.name}-${git.tag ?? 'dev'}.mcaddon",
                             "compression_level": 6,
                             "update_version_from_tag": true
                         }
@@ -234,7 +234,7 @@
                         "filter": "parcel",
                         "settings": {
                             "content_type": "addon",
-                            "output": "build/${config.name}-${git.tag ?? 'dev'}-gametest.mcpack",
+                            "output": "build/${config.name}-${git.tag ?? 'dev'}-gametest.mcaddon",
                             "compression_level": 6,
                             "update_version_from_tag": true
                         }
