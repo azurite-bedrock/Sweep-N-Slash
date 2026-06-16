@@ -138,7 +138,10 @@ export const alylicaDungeons: WeaponStats[] = [
                 critAttack: hit || false,
                 critMultiplier: hit ? 2.5 : undefined,
                 sprintKnockback: hit || undefined,
-                enchantedKnockback: hit && !sprintKnockback ? 0.58 : undefined,
+
+                regularVerticalKnockback: 0.1955,
+                enchantedVerticalKnockback: hit && !sprintKnockback ? 0.7955 : undefined,
+                enchantedKnockback: hit && !sprintKnockback ? 0.38 : 1.586,
 
                 cancelDurability: hit,
 
@@ -342,19 +345,19 @@ export const alylicaDungeons: WeaponStats[] = [
         damage: 3,
         flags: ['is_weapon'],
         beforeEffect: ({ system, target, iframes, cooldown, utils }) => {
-            const comboCount = comboMap.get(target.id) ?? 1;
+            const comboCount = comboMap.get(target.id) ?? 0;
             const hitTime = utils.getLastAttack(target)?.time
                 ? system.currentTick - (utils.getLastAttack(target)?.time ?? 0)
                 : 0;
-            if (cooldown === 1 && hitTime <= 14) {
-                comboMap.set(target.id, Math.min(comboCount ? comboCount + 1 : 1, 3));
-            } else if (iframes || cooldown !== 1) {
-                comboMap.set(target.id, 1);
+            if (cooldown === 1 && hitTime <= 12) {
+                comboMap.set(target.id, Math.min(comboCount ? comboCount + 1 : 0, 3));
+            } else if (iframes || cooldown !== 1 || hitTime >= 12) {
+                comboMap.set(target.id, 0);
             }
 
             return {
-                critAttack: comboCount <= 1 ? false : true,
-                critMultiplier: comboCount * 0.7,
+                critAttack: comboCount === 0 ? false : true,
+                critMultiplier: 1 + comboCount * 0.7,
             };
         },
     },

@@ -34,12 +34,15 @@ sweepnslash.config.general.tipmessage=进入游戏时加载提示信息
 ## Personal Settings
 sweepnslash.config.personal.header=自定义
 sweepnslash.config.personal.indicator=攻击指示器
-sweepnslash.config.personal.indicator.tooltip=改变攻击显示器的UI。如果使用该模组时UI有问题的话，建议用Geyser模式
+sweepnslash.config.personal.indicator.tooltip=改变攻击显示器的UI。
 sweepnslash.config.personal.indicator.crosshair=十字准星下
 sweepnslash.config.personal.indicator.hotbar=快捷栏旁
 sweepnslash.config.personal.indicator.geyser=Geyser模式
 sweepnslash.config.personal.indicator.none=无
 sweepnslash.config.personal.indicator.actionbar=Action Bar
+sweepnslash.config.personal.actionbar_char=Action Bar Attack Indicator Icon
+sweepnslash.config.personal.actionbar_char.placeholder=Enter a character (Default: _)
+sweepnslash.config.personal.actionbar_char.tooltip=Character text that will form Action Bar indicator.
 sweepnslash.config.personal.bowhitsound=弓箭命中音效
 sweepnslash.config.personal.sweep.particles=横扫粒子
 sweepnslash.config.personal.enchanted.particles=附魔武器攻击粒子
@@ -48,6 +51,19 @@ sweepnslash.config.personal.crit.particles=暴击粒子
 sweepnslash.config.personal.crit.sounds=暴击音效
 sweepnslash.config.personal.sweep.rgb=横扫粒子颜色(RGB)
 sweepnslash.config.save=保存
+
+## Global Configuration Menu
+sweepnslash.config.globalconfig_tip=Operators can use '/sns:globalconfig' command to open Global Configuration menu.
+
+sweepnslash.globalconfig.command.description=Opens up global configuration menu for Sweep 'N Slash.
+sweepnslash.globalconfig.menu.title=Global Configuration Menu
+
+sweepnslash.globalconfig.description=Configure server-wide mechanics and manage baseline player preferences. Tailor gameplay elements to fit the server's style or disable interface components that conflict with other UIs.
+sweepnslash.globalconfig.force_toggle.description=Locks this setting server-wide to the chosen default, and hides it from the players' configuration menu.
+sweepnslash.globalconfig.default_toggle.description=Sets the default value for new players without affecting players who have already joined. Can be manually changed by players if not forced.
+sweepnslash.globalconfig.hide_description=Hide description for this menu
+sweepnslash.globalconfig.force_toggle=Force Option
+sweepnslash.globalconfig.default_toggle=Default Toggle
 
 sweepnslash.config.status.canceled=§c已取消保存
 sweepnslash.config.status.saved=§a已保存设置

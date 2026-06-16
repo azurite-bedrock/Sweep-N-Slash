@@ -30,12 +30,15 @@ sweepnslash.config.general.tipmessage=Mensaje de consejo al unirse
 
 sweepnslash.config.personal.header=Configuración personal
 sweepnslash.config.personal.indicator=Indicador de ataque
-sweepnslash.config.personal.indicator.tooltip=Cambia la interfaz del indicador de ataque. Si tienes problemas con la interfaz del complemento, prueba a usar Geyser.
+sweepnslash.config.personal.indicator.tooltip=Cambia la interfaz del indicador de ataque.
 sweepnslash.config.personal.indicator.crosshair=Punto de mira
 sweepnslash.config.personal.indicator.hotbar=Barra de acceso rápido
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=Ninguno
 sweepnslash.config.personal.indicator.actionbar=Action Bar
+sweepnslash.config.personal.actionbar_char=Action Bar Attack Indicator Icon
+sweepnslash.config.personal.actionbar_char.placeholder=Enter a character (Default: _)
+sweepnslash.config.personal.actionbar_char.tooltip=Character text that will form Action Bar indicator.
 sweepnslash.config.personal.bowhitsound=Sonido de impacto de arco
 sweepnslash.config.personal.sweep.particles=Partículas de barrido
 sweepnslash.config.personal.enchanted.particles=Partículas de golpe encantado
@@ -44,6 +47,19 @@ sweepnslash.config.personal.crit.particles=Partículas de golpe crítico
 sweepnslash.config.personal.crit.sounds=Sonidos de golpe crítico
 sweepnslash.config.personal.sweep.rgb=Color RGB del barrido
 sweepnslash.config.save=Guardar
+
+## Global Configuration Menu
+sweepnslash.config.globalconfig_tip=Operators can use '/sns:globalconfig' command to open Global Configuration menu.
+
+sweepnslash.globalconfig.command.description=Opens up global configuration menu for Sweep 'N Slash.
+sweepnslash.globalconfig.menu.title=Global Configuration Menu
+
+sweepnslash.globalconfig.description=Configure server-wide mechanics and manage baseline player preferences. Tailor gameplay elements to fit the server's style or disable interface components that conflict with other UIs.
+sweepnslash.globalconfig.force_toggle.description=Locks this setting server-wide to the chosen default, and hides it from the players' configuration menu.
+sweepnslash.globalconfig.default_toggle.description=Sets the default value for new players without affecting players who have already joined. Can be manually changed by players if not forced.
+sweepnslash.globalconfig.hide_description=Hide description for this menu
+sweepnslash.globalconfig.force_toggle=Force Option
+sweepnslash.globalconfig.default_toggle=Default Toggle
 
 sweepnslash.config.status.canceled=§cConfiguración cancelada.
 sweepnslash.config.status.saved=§aConfiguración guardada.

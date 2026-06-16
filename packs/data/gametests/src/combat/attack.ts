@@ -132,6 +132,7 @@ export class CombatManager {
             : EntityDamageCause.entityAttack;
 
         const applyKnockback = (knockbackLevel: number, pLoc: any, tLoc: any, rot: any) => {
+            if (targetStats?.canTakeKnockback === false) return;
             const knockbackValid = knockbackLevel > 0;
             const knockbackX = knockbackValid
                 ? Math.max(

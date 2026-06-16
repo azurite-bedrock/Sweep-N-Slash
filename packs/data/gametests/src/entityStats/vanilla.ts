@@ -2,6 +2,10 @@ import { EntityStats } from '../importStats.ts';
 
 export const vanillaEntities: EntityStats[] = [
     {
+        id: 'minecraft:sulfur_cube',
+        canTakeKnockback: false,
+    },
+    {
         id: 'minecraft:creaking',
         regularKnockbackTakeMultiplier: 0,
         enchantedKnockbackTakeMultiplier: 0.75,

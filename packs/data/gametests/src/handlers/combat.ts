@@ -14,10 +14,11 @@ import { shieldBlock } from '../combat/shields.ts';
 import { AttackCooldownManager } from '../combat/cooldown.ts';
 import { playerHitMap, lastAttackMap, rawDamageMap } from '../shared/entityState.ts';
 import { healthParticle } from '../ui/particles.ts';
+import { Game } from '../shared/game.ts';
 
 export function registerCombatHandlers(): void {
     world.afterEvents.playerSwingStart.subscribe(({ player, swingSource }) => {
-        if (world.getDynamicProperty('addon_toggle') == false) return;
+        if (!Game.isAddonEnabled()) return;
 
         const shieldCooldown = player.getItemCooldown('minecraft:shield');
         player.startItemCooldown('minecraft:shield', shieldCooldown ? shieldCooldown : 5);
@@ -29,7 +30,7 @@ export function registerCombatHandlers(): void {
 
     world.afterEvents.entityHitEntity.subscribe(
         ({ damagingEntity: player, hitEntity: target }) => {
-            if (world.getDynamicProperty('addon_toggle') == false) return;
+            if (!Game.isAddonEnabled()) return;
 
             const currentTick = system.currentTick;
             const status = getStatus(player);
@@ -52,7 +53,7 @@ export function registerCombatHandlers(): void {
 
     world.afterEvents.entityHurt.subscribe(({ damageSource, hurtEntity, damage }) => {
         if (!hurtEntity?.isValid) return;
-        if (world.getDynamicProperty('addon_toggle') == false) return;
+        if (!Game.isAddonEnabled()) return;
 
         const currentTick = system.currentTick;
         const player = damageSource.damagingEntity;
@@ -91,7 +92,7 @@ export function registerCombatHandlers(): void {
     });
 
     world.beforeEvents.entityHurt.subscribe((ev) => {
-        if (world.getDynamicProperty('addon_toggle') == false) return;
+        if (!Game.isAddonEnabled()) return;
 
         const { damageSource, hurtEntity } = ev;
         const damagingEntity = damageSource?.damagingEntity;
@@ -105,7 +106,7 @@ export function registerCombatHandlers(): void {
 
     world.afterEvents.entityHitBlock.subscribe(({ damagingEntity: player }) => {
         if (!(player instanceof Player)) return;
-        if (world.getDynamicProperty('addon_toggle') == false) return;
+        if (!Game.isAddonEnabled()) return;
         if (player.getGameMode() === GameMode.Creative) return;
 
         setLastShieldTime(player, system.currentTick);

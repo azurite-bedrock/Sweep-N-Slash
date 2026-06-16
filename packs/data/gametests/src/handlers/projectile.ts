@@ -1,7 +1,8 @@
 import { Player, world } from '@minecraft/server';
+import { Sounds } from '../Files.ts';
 import { isTeam } from '../shared/team.ts';
 import { getItemStats, itemHasFlag } from '../stats/item.ts';
-import { Sounds } from '../Files.ts';
+import { Game } from '../shared/game.ts';
 
 export function registerProjectileHandlers(): void {
     world.afterEvents.projectileHitEntity.subscribe((event) => {
@@ -9,7 +10,7 @@ export function registerProjectileHandlers(): void {
         const target = event.getEntityHit().entity;
 
         if (!player || !target) return;
-        if (world.getDynamicProperty('addon_toggle') == false) return;
+        if (!Game.isAddonEnabled()) return;
         if (isTeam(player, target)) return;
 
         const configCheck =
@@ -25,7 +26,7 @@ export function registerProjectileHandlers(): void {
     });
 
     world.afterEvents.entitySpawn.subscribe(({ cause, entity }) => {
-        if (world.getDynamicProperty('addon_toggle') == false) return;
+        if (!Game.isAddonEnabled()) return;
         if (!entity?.isValid) return;
 
         const projectileComp = entity?.getComponent('projectile');

@@ -34,12 +34,15 @@ sweepnslash.config.general.tipmessage=세계 입장 시 팁 메세지 표시
 ## Personal Settings
 sweepnslash.config.personal.header=개인 설정
 sweepnslash.config.personal.indicator=공격 지표
-sweepnslash.config.personal.indicator.tooltip=공격 지표의 모양을 변경합니다. UI에 문제가 생길 경우 Geyser를 시도해보세요.
+sweepnslash.config.personal.indicator.tooltip=공격 지표의 모양을 변경합니다.
 sweepnslash.config.personal.indicator.crosshair=십자선
 sweepnslash.config.personal.indicator.hotbar=단축 바
 sweepnslash.config.personal.indicator.geyser=Geyser
 sweepnslash.config.personal.indicator.none=비활성화
 sweepnslash.config.personal.indicator.actionbar=액션 바
+sweepnslash.config.personal.actionbar_char=액션 바 공격 지표 모양
+sweepnslash.config.personal.actionbar_char.placeholder=글자 입력 (기본값: _)
+sweepnslash.config.personal.actionbar_char.tooltip=액션 바 공격 지표를 표시하는 데 사용될 글자입니다.
 sweepnslash.config.personal.bowhitsound=화살 명중 효과음
 sweepnslash.config.personal.sweep.particles=휩쓸기 공격 입자
 sweepnslash.config.personal.enchanted.particles=마법 부여 공격 입자
@@ -48,6 +51,19 @@ sweepnslash.config.personal.crit.particles=치명타 공격 입자
 sweepnslash.config.personal.crit.sounds=치명타 공격 효과음
 sweepnslash.config.personal.sweep.rgb=휩쓸기 공격 입자 색상
 sweepnslash.config.save=저장
+
+## Global Configuration Menu
+sweepnslash.config.globalconfig_tip=관리자 권한을 가진 유저는 '/sns:globalconfig' 명령어로 글로벌 설정 메뉴를 열 수 있습니다.
+
+sweepnslash.globalconfig.command.description=Sweep 'N Slash 세계 설정 메뉴를 엽니다.
+sweepnslash.globalconfig.menu.title=글로벌 설정
+
+sweepnslash.globalconfig.description=서버 전반의 메커니즘을 구성하고 플레이어의 기본 설정을 관리합니다. 서버 스타일에 맞게 게임플레이 요소를 조정하거나, 다른 UI와 충돌하는 인터페이스 구성 요소를 비활성화할 수 있습니다.
+sweepnslash.globalconfig.force_toggle.description=이 설정을 선택한 기본값으로 서버 전체에 고정하고, 플레이어의 설정 메뉴에서 완전히 숨깁니다.
+sweepnslash.globalconfig.default_toggle.description=신규 플레이어의 기본값을 설정합니다. 이미 접속한 적이 있는 플레이어에게는 영향을 주지 않으며, 강제 적용되지 않은 경우 플레이어가 직접 변경할 수 있습니다.
+sweepnslash.globalconfig.hide_description=이 메뉴의 설명 숨기기
+sweepnslash.globalconfig.force_toggle=옵션 강제 적용
+sweepnslash.globalconfig.default_toggle=기본 토글 설정
 
 sweepnslash.config.status.canceled=§c설정이 취소되었습니다.
 sweepnslash.config.status.saved=§a설정이 저장되었습니다.

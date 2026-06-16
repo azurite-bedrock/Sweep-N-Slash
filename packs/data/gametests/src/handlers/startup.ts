@@ -1,12 +1,15 @@
 import { DimensionTypes, Player, system, world } from '@minecraft/server';
-import { initWorldProperties, initPlayerProperties } from '../config/init.ts';
-import { registerConfigCommand } from '../config/form.ts';
-import { setAttackCooldown } from '../shared/status.ts';
 import { damageTest } from '../combat/checks.ts';
+import { registerConfigCommand } from '../config/config.ts';
+import { registerGlobalConfigCommand } from '../config/globalConfig.ts';
+import { initPlayerProperties, initWorldProperties } from '../config/init.ts';
 import { VERSION } from '../main.ts';
+import { setAttackCooldown } from '../shared/status.ts';
+import { Game } from '../shared/game.ts';
+//import { registerAboutCommand } from '../config/about.ts';
 
 let SimulatedPlayer: any;
-let gametest = true;
+export let gametest = true;
 
 export function registerStartupHandlers(): void {
     import('@minecraft/server-gametest')
@@ -24,6 +27,8 @@ export function registerStartupHandlers(): void {
 
     system.beforeEvents.startup.subscribe((init) => {
         registerConfigCommand(init);
+        registerGlobalConfigCommand(init);
+        //registerAboutCommand(init);
     });
 
     world.afterEvents.worldLoad.subscribe(() => {
@@ -33,10 +38,7 @@ export function registerStartupHandlers(): void {
             ),
         );
         initWorldProperties();
-        system.sendScriptEvent(
-            'sweep-and-slash:toggle',
-            `${world.getDynamicProperty('addon_toggle')}`,
-        );
+        system.sendScriptEvent('sweep-and-slash:toggle', `${Game.isAddonEnabled()}`);
     });
 
     world.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
@@ -62,19 +64,11 @@ export function registerStartupHandlers(): void {
 
     system.afterEvents.scriptEventReceive.subscribe(({ id, message, sourceEntity: player }) => {
         if (id === 'sweep-and-slash:toggle_check') {
-            system.sendScriptEvent(
-                'sweep-and-slash:toggle',
-                `${world.getDynamicProperty('addon_toggle')}`,
-            );
+            system.sendScriptEvent('sweep-and-slash:toggle', `${Game.isAddonEnabled()}`);
             return;
         }
 
-        if (
-            world.getDynamicProperty('addon_toggle') == false ||
-            !(player instanceof Player) ||
-            !player
-        )
-            return;
+        if (!Game.isAddonEnabled() || !(player instanceof Player) || !player) return;
 
         if (id === 'sns:testdamage') {
             damageTest(player);

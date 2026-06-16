@@ -2,11 +2,14 @@ import { Difficulty, system, world } from '@minecraft/server';
 import { tickIndicator } from '../ui/indicator.ts';
 import { tickFood } from '../food/index.ts';
 import { tickGame } from '../combat/game.ts';
+import { Game, WorldProperties } from '../shared/game.ts';
 
 export function registerTickHandlers(): void {
     system.runInterval(() => {
-        const addonToggle = world.getDynamicProperty('addon_toggle') as boolean;
-        const saturationHealing = world.getDynamicProperty('saturationHealing') as boolean;
+        const addonToggle = Game.isAddonEnabled() as boolean;
+        const saturationHealing = world.getDynamicProperty(
+            WorldProperties.SaturationHealing,
+        ) as boolean;
         const isPeaceful = world.getDifficulty() === Difficulty.Peaceful;
         const currentTick = system.currentTick;
 
