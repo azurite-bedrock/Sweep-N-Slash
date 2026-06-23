@@ -1,0 +1,25 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.crossbow_hold": {
+			"loop": true,
+			"animation_length": 0.08,
+			"bones": {
+				"leftArm": {
+					"rotation": [
+						"query.is_swimming?0:-93+query.target_x_rotation-query.is_sneaking*26-this",
+						"query.is_swimming?0:42+math.clamp(query.target_y_rotation,-45,5)-this",
+						"query.is_sneaking*-15"
+					]
+				},
+				"rightArm": {
+					"rotation": [
+						"query.is_swimming?0:-92+query.target_x_rotation-this",
+						"query.is_swimming?0:math.clamp(query.target_y_rotation,-60,45)-this",
+						0
+					]
+				}
+			}
+		}
+	}
+}

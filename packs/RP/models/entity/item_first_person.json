@@ -1,0 +1,49 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.item_first_person",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "rightitem",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"texture_meshes": [
+						{
+							"local_pivot": [
+								9,
+								0,
+								6
+							],
+							"position": [
+								2.01,
+								-0.5,
+								-1
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							],
+							"texture": "default"
+						}
+					]
+				}
+			]
+		}
+	]
+}

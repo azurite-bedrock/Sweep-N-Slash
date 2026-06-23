@@ -1,0 +1,156 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.crossbow": {
+			"initial_state": "default",
+			"states": {
+				"charge": {
+					"animations": [
+						"third_person_crossbow_equipped"
+					],
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name!='crossbow'||(query.item_remaining_use_duration<=0&&!query.item_is_charged)"
+						},
+						{
+							"hold": "query.item_is_charged"
+						}
+					]
+				},
+				"default": {
+					"transitions": [
+						{
+							"hold": "query.item_is_charged"
+						},
+						{
+							"charge": "query.item_remaining_use_duration>0"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						{
+							"crossbow_hold": "!(query.blocking&&query.get_equipped_item_name('off_hand')=='shield')"
+						}
+					],
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name!='crossbow'||(query.item_remaining_use_duration<=0&&!query.item_is_charged)"
+						},
+						{
+							"charge": "query.item_remaining_use_duration>0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.first_person_attack": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"first_person_attack_rotation": "!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						},
+						{
+							"attack_rotation_custom_sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')"
+						},
+						{
+							"attack_rotation_custom_axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident')"
+						},
+						{
+							"cooldown_mace": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_mace')"
+						}
+					],
+					"transitions": [
+						{
+							"vr_attack": "variable.is_using_vr"
+						}
+					]
+				},
+				"vr_attack": {
+					"animations": [
+						"first_person_vr_attack_rotation"
+					],
+					"transitions": [
+						{
+							"default": "!variable.is_using_vr"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cooldown_sword": {
+			"initial_state": "sword",
+			"states": {
+				"sword": {
+					"animations": [
+						{
+							"first_person_sword_cooldown": "variable.is_first_person&&query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')&&query.get_equipped_item_name('main_hand')!='mace'"
+						}
+					],
+					"transitions": [
+						{
+							"not_sword": "variable.attack_time||!query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')"
+						}
+					]
+				},
+				"not_sword": {
+					"transitions": [
+						{
+							"sword": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cooldown_axe": {
+			"initial_state": "axe",
+			"states": {
+				"axe": {
+					"animations": [
+						{
+							"first_person_axe_cooldown": "variable.is_first_person&&(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						}
+					],
+					"transitions": [
+						{
+							"not_axe": "variable.attack_time||!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						}
+					]
+				},
+				"not_axe": {
+					"transitions": [
+						{
+							"axe": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cooldown_mace": {
+			"initial_state": "mace",
+			"states": {
+				"mace": {
+					"animations": [
+						{
+							"first_person_mace_cooldown": "variable.is_first_person&&query.get_equipped_item_name('main_hand')=='mace'"
+						}
+					],
+					"transitions": [
+						{
+							"not_mace": "variable.attack_time"
+						}
+					]
+				},
+				"not_mace": {
+					"transitions": [
+						{
+							"mace": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		}
+	}
+}

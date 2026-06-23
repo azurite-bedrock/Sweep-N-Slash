@@ -1,0 +1,53 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.food.consumable_offhand",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [
+					0,
+					0,
+					0
+				]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [
+						0,
+						0,
+						0
+					]
+				},
+				{
+					"name": "ItemLeftHand",
+					"pivot": [
+						0,
+						0,
+						0
+					],
+					"binding": "'leftitem'",
+					"texture_meshes": [
+						{
+							"texture": "default",
+							"position": [
+								0,
+								0,
+								0
+							],
+							"rotation": [
+								0,
+								-135,
+								90
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

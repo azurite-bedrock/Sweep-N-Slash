@@ -1,0 +1,29 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.humanoid.use_item_progress": {
+			"loop": true,
+			"bones": {
+				"leftarm": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.humanoid.use_item_progress_offhand": {
+			"loop": true,
+			"bones": {
+				"itemarm": {
+					"rotation": [
+						"(query.anim_time*-60)",
+						"(query.anim_time*-22.5)",
+						"(query.anim_time*-5.625)"
+					]
+				}
+			}
+		}
+	}
+}

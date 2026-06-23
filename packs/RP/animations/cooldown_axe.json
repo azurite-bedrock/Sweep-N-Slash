@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.axe": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.9375,
+			"loop_delay": "0",
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							0,
+							-20,
+							0
+						],
+						"0.9375": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "minecraft:splash_potion",
+			"animations": {
+				"flying": "animation.actor.billboard"
+			},
+			"scripts": {
+				"scale": "0.5",
+				"animate": [
+					"flying"
+				]
+			}
+		}
+	}
+}

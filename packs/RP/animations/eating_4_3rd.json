@@ -1,0 +1,147 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.food.consumable_offhand.position_1st_pov": {
+			"loop": true,
+			"bones": {
+				"ItemLeftHand": {
+					"rotation": [
+						110,
+						0,
+						0
+					],
+					"position": [
+						-21,
+						33,
+						26
+					],
+					"scale": 1
+				},
+				"camera": {
+					"rotation": [
+						0,
+						-180,
+						0
+					],
+					"position": [
+						0,
+						2,
+						0
+					]
+				}
+			}
+		},
+		"animation.food.consumable_offhand.position_3rd_pov": {
+			"loop": true,
+			"bones": {
+				"ItemLeftHand": {
+					"rotation": [
+						237.5,
+						10,
+						90
+					],
+					"position": [
+						1.5,
+						24,
+						-10.5
+					],
+					"scale": 0.55
+				}
+			}
+		},
+		"animation.food.consumable_offhand.eating_1st_pov": {
+			"loop": true,
+			"bones": {
+				"ItemLeftHand": {
+					"rotation": [
+						50,
+						75,
+						42
+					],
+					"position": [
+						25,
+						-2,
+						-8
+					]
+				}
+			}
+		},
+		"animation.food.consumable_offhand.eating_movement": {
+			"loop": true,
+			"bones": {
+				"ItemLeftHand": {
+					"position": [
+						0,
+						"math.sin(1440*q.anim_time+0.5)*2",
+						0
+					]
+				}
+			}
+		},
+		"animation.food.consumable_mainhand.position_1st_pov_m": {
+			"loop": true,
+			"bones": {
+				"ItemRightHand": {
+					"rotation": [
+						110,
+						0,
+						0
+					],
+					"position": [
+						21,
+						33,
+						26
+					],
+					"scale": 1
+				}
+			}
+		},
+		"animation.food.consumable_mainhand.position_3rd_pov_m": {
+			"loop": true,
+			"bones": {
+				"ItemRightHand": {
+					"rotation": [
+						237.5,
+						-10,
+						-90
+					],
+					"position": [
+						-1.5,
+						24,
+						-10.5
+					],
+					"scale": 0.55
+				}
+			}
+		},
+		"animation.food.consumable_mainhand.eating_1st_pov_m": {
+			"loop": true,
+			"bones": {
+				"ItemRightHand": {
+					"rotation": [
+						50,
+						-75,
+						-42
+					],
+					"position": [
+						-25,
+						-2,
+						-8
+					]
+				}
+			}
+		},
+		"animation.food.consumable_mainhand.eating_movement_m": {
+			"loop": true,
+			"bones": {
+				"ItemRightHand": {
+					"position": [
+						0,
+						"math.sin(1440*q.anim_time+0.5)*2",
+						0
+					]
+				}
+			}
+		}
+	}
+}

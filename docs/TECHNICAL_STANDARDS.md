@@ -10,5 +10,3 @@ Because add-ons do not have the same freedom as modding, we adhere to the follow
   - `player.json` is an exception for this, since the add-on as whole is based around 'disabling vanilla combat'.
 - Zero-Regression: Any new feature must not negatively affect performance or alter gameplay in a way that could affect Bedrock experience.
 - Maintenance Sustainability: Features that require constant maintenance to remain functional is not desired unless necessary.
-
-TODO: Write more

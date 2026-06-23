@@ -1,0 +1,116 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.wind_charge.throw_1st": {
+			"loop": false,
+			"animation_length": 0.5,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"-37+math.sin(q.life_time*120)*10",
+						"-60",
+						"63"
+					],
+					"position": [
+						"5.5",
+						"30.5+math.sin(q.life_time*80)*2",
+						"-3"
+					],
+					"scale": 0.45
+				}
+			}
+		},
+		"animation.wind_charge.throw_3rd": {
+			"loop": false,
+			"animation_length": 0.5,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"math.sin(q.life_time*100)*5",
+						"0",
+						"7.5+math.sin(q.life_time*120)*8"
+					],
+					"position": [
+						"-1",
+						"25+math.sin(q.life_time*60)*1.5",
+						"-1"
+					]
+				}
+			}
+		},
+		"animation.wind_charge.hold_1st": {
+			"loop": true,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"-25",
+						"-45",
+						"45"
+					],
+					"position": [
+						"4",
+						"29",
+						"-2.5"
+					],
+					"scale": 0.4
+				}
+			}
+		},
+		"animation.wind_charge.hold_3rd": {
+			"loop": true,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"0",
+						"0",
+						"5"
+					],
+					"position": [
+						"-1",
+						"24",
+						"-1"
+					],
+					"scale": 0.5
+				}
+			}
+		},
+		"animation.wind_charge.ground_boost_1st": {
+			"loop": false,
+			"animation_length": 0.8,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"-90+math.sin(q.life_time*180)*15",
+						"0",
+						"0"
+					],
+					"position": [
+						"0",
+						"25+math.sin(q.life_time*200)*3",
+						"2+math.sin(q.life_time*160)*2"
+					],
+					"scale": "0.5 + math.sin(q.life_time * 140) * 0.1"
+				}
+			}
+		},
+		"animation.wind_charge.ground_boost_3rd": {
+			"loop": false,
+			"animation_length": 0.8,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"-75+math.sin(q.life_time*160)*12",
+						"0",
+						"0"
+					],
+					"position": [
+						"0",
+						"22+math.sin(q.life_time*180)*2.5",
+						"1+math.sin(q.life_time*140)*1.5"
+					],
+					"scale": "0.6 + math.sin(q.life_time * 120) * 0.15"
+				}
+			}
+		}
+	}
+}

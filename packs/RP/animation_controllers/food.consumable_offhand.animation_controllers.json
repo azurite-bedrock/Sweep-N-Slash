@@ -1,0 +1,27 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.food.consumable_offhand.comsuming": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"comsum": "query.main_hand_item_use_duration&&(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe'))&&(query.property('sns:can_eat')!=0)"
+						}
+					],
+					"blend_transition": 0.1
+				},
+				"comsum": {
+					"animations": [
+						"eating_1st_pov"
+					],
+					"transitions": [
+						{
+							"default": "!(query.main_hand_item_use_duration&&(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')))"
+						}
+					]
+				}
+			}
+		}
+	}
+}

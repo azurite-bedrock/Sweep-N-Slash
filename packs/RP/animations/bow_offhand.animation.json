@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.bow_offhand.wield": {
+			"loop": true,
+			"bones": {
+				"leftitem": {
+					"rotation": [
+						"c.is_first_person?0:20",
+						"c.is_first_person?-225:180",
+						"c.is_first_person?90:0"
+					],
+					"position": [
+						"c.is_first_person?2.01:-1",
+						"c.is_first_person?-5:2.5",
+						"c.is_first_person?-1:-10"
+					]
+				}
+			}
+		}
+	}
+}

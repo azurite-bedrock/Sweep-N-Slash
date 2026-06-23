@@ -1,0 +1,51 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.crossbow.charge": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [
+						"c.is_first_person?-9:0",
+						"c.is_first_person?60:-3",
+						"c.is_first_person?-47:3.25"
+					],
+					"position": [
+						"c.is_first_person?16:0.5",
+						"c.is_first_person?13:-0.5",
+						"c.is_first_person?-11:-1.5"
+					]
+				}
+			}
+		},
+		"animation.crossbow.wield": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"rotation": [
+						"c.is_first_person?-9:0",
+						"c.is_first_person?60:-3",
+						"c.is_first_person?-47:3.25"
+					],
+					"position": [
+						"c.is_first_person?13:0.5",
+						"c.is_first_person?7:-0.5",
+						"c.is_first_person?2:-1.5"
+					]
+				}
+			}
+		},
+		"animation.crossbow.wield_first_person_pull": {
+			"loop": true,
+			"bones": {
+				"rightitem": {
+					"position": [
+						0,
+						"0+(variable.charge_amount>=1?math.sin(1300*(q.life_time))*0.1-math.sin(q.life_time*45)*0.25:0)",
+						0
+					]
+				}
+			}
+		}
+	}
+}
