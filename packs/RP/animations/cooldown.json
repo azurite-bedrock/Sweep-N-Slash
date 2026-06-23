@@ -1,6 +1,49 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
+		"animation.cooldown.shovel": {
+			"animation_length": 0.9,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": {
+							"post": [
+								0,
+								-12,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						},
+						"0.9": {
+							"post": [
+								0,
+								0,
+								0
+							],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
 		"animation.cooldown.pickaxe": {
 			"animation_length": 0.765,
 			"bones": {

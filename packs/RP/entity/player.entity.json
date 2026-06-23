@@ -98,6 +98,7 @@
                 "animate": [
                     "root",
 					"cooldown_sword",
+                    "cooldown_shovel",
                     "cooldown_pickaxe",
 					"cooldown_axe",
 					"cooldown_mace"
@@ -172,9 +173,12 @@
                 "blink": "controller.animation.persona.blink",
                 "tooting_goat_horn": "animation.humanoid.tooting_goat_horn",
                 "holding_brush": "animation.humanoid.holding_brush",
+                "first_person_shovel_cooldown": "animation.cooldown.shovel",
                 "first_person_pickaxe_cooldown": "animation.cooldown.pickaxe",
                 "brushing": "animation.humanoid.brushing",
+                "attack_rotation_custom_shovel": "animation.player.first_person.attack_rotation_custom_shovel",
 				"first_person_sword_cooldown": "animation.cooldown.sword",
+                "cooldown_shovel": "controller.animation.cooldown_shovel",
                 "attack_rotation_custom_pickaxe": "animation.player.first_person.attack_rotation_custom_pickaxe",
 				"first_person_axe_cooldown": "animation.cooldown.axe",
                 "cooldown_pickaxe": "controller.animation.cooldown_pickaxe",
