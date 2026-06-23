@@ -50,10 +50,13 @@
 				"default": {
 					"animations": [
 						{
-							"first_person_attack_rotation": "!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+							"first_person_attack_rotation": "!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_pickaxe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
 						},
 						{
 							"attack_rotation_custom_sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')"
+						},
+						{
+							"attack_rotation_custom_pickaxe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_pickaxe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident')"
 						},
 						{
 							"attack_rotation_custom_axe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident')"
@@ -123,6 +126,30 @@
 					"transitions": [
 						{
 							"axe": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cooldown_pickaxe": {
+			"initial_state": "pickaxe",
+			"states": {
+				"pickaxe": {
+					"animations": [
+						{
+							"first_person_pickaxe_cooldown": "variable.is_first_person&&(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_pickaxe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						}
+					],
+					"transitions": [
+						{
+							"not_pickaxe": "variable.attack_time||!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_pickaxe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						}
+					]
+				},
+				"not_pickaxe": {
+					"transitions": [
+						{
+							"pickaxe": "!variable.attack_time"
 						}
 					]
 				}

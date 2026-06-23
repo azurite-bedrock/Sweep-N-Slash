@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.player.pickaxe": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.765,
+			"loop_delay": "0",
+			"bones": {
+				"rightArm": {
+					"position": {
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.125": [
+							0,
+							-20,
+							0
+						],
+						"0.5": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			}
+		}
+	}
+}
