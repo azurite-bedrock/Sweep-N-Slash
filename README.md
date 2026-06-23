@@ -70,12 +70,7 @@ regolith run pack
 
 # Licensing
 
-This project uses a dual-license model. See [NOTICE.md](NOTICE.md) for full details.
-
-| Component               | License                                         |
-| ----------------------- | ----------------------------------------------- |
-| Code, scripts, and data | [MIT](LICENSES/MIT.txt)                         |
-| Project icon and logo   | [CC-BY-NC-SA-4.0](LICENSES/CC-BY-NC-SA-4.0.txt) |
+This project uses a dual-license model and several retained 3rd party project license. See [NOTICE.md](NOTICE.md) for full details.
 
 See [TRADEMARK.md](TRADEMARK.md) for the trademark policy. Trademark rights exist independently of, and are not granted by, either license.
 
