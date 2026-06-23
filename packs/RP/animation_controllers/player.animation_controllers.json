@@ -50,10 +50,13 @@
 				"default": {
 					"animations": [
 						{
-							"first_person_attack_rotation": "!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_shovel')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_pickaxe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+							"first_person_attack_rotation": "!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_hoe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_shovel')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_pickaxe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_axe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
 						},
 						{
 							"attack_rotation_custom_sword": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_sword')"
+						},
+						{
+							"attack_rotation_custom_hoe": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_hoe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident')"
 						},
 						{
 							"attack_rotation_custom_shovel": "query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_shovel')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident')"
@@ -105,6 +108,30 @@
 					"transitions": [
 						{
 							"sword": "!variable.attack_time"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.cooldown_hoe": {
+			"initial_state": "hoe",
+			"states": {
+				"hoe": {
+					"animations": [
+						{
+							"first_person_hoe_cooldown": "variable.is_first_person&&(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_hoe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						}
+					],
+					"transitions": [
+						{
+							"not_hoe": "variable.attack_time||!(query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_hoe')||query.equipped_item_any_tag('slot.weapon.mainhand','minecraft:is_trident'))"
+						}
+					]
+				},
+				"not_hoe": {
+					"transitions": [
+						{
+							"hoe": "!variable.attack_time"
 						}
 					]
 				}

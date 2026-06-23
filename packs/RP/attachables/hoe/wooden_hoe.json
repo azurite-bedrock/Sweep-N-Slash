@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "minecraft:wooden_hoe",
+			"materials": {
+				"default": "entity_alphatest",
+				"enchanted": "entity_alphatest_glint"
+			},
+			"textures": {
+				"default": "textures/items/wood_hoe",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"first_person": "geometry.item_first_person",
+				"third_person": "geometry.item_third_person",
+				"offhand": "geometry.item_first_person_offhand_hoe",
+				"aoffhand": "geometry.item_third_person_offhand"
+			},
+			"animations": {
+				"wield": "animation.bow.wield",
+				"wield_first_person_pull": "animation.bow.wield_first_person_pull",
+				"offhand": "animation.bow_offhand.wield"
+			},
+			"render_controllers": [
+				{
+					"controller.render.third_person": "query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_hoe') && !(c.is_first_person)"
+				},
+				{
+					"controller.render.first_person": "query.is_item_name_any('slot.weapon.mainhand', 0, 'minecraft:wooden_hoe') && (c.is_first_person)"
+				},
+				{"controller.render.item_default_offhand": "query.is_item_name_any('slot.weapon.offhand', 0, 'minecraft:wooden_hoe')"} 
+			],
+			"scripts": {
+				"animate": [
+					"wield",
+					{
+						"offhand": "query.is_item_name_any('slot.weapon.offhand', 0, 'minecraft:wooden_hoe')"
+					}
+				]
+			},
+			"item": {
+				"minecraft:wooden_hoe": "query.owner_identifier == 'minecraft:player'"
+			}
+		}
+	}
+}
