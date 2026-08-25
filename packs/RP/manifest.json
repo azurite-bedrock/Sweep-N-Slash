@@ -16,6 +16,13 @@
         }
     ],
     "capabilities": ["pbr"],
+    "subpacks": [
+        {
+            "folder_name": "java_weapon_animations",
+            "name": "Java weapon animations",
+            "memory_tier": 0
+        }
+    ],
     "dependencies": [
         {
             "uuid": "29cfdcbb-2333-4334-89ec-1879e98c0f28",
