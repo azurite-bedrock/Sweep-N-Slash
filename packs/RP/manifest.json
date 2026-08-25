@@ -18,9 +18,14 @@
     "capabilities": ["pbr"],
     "subpacks": [
         {
-            "folder_name": "java_weapon_animations",
-            "name": "Java weapon animations",
+            "folder_name": "disable",
+            "name": "Disable Weapon Animations",
             "memory_tier": 0
+        },
+        {
+            "folder_name": "java_weapon_animations",
+            "name": "Enable Weapon Animations",
+            "memory_tier": 1
         }
     ],
     "dependencies": [
