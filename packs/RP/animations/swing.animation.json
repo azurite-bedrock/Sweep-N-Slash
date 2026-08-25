@@ -1,0 +1,258 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.jm.swing.arm": {
+      "loop": true,
+      "bones": {
+        "rightarm": {
+          "position": [
+            "math.clamp(-15.5 * math.sin(variable.first_person_item_rotation_factor * variable.attack_time * 112.0), -7.0, 999.0) * math.sin(variable.first_person_item_rotation_factor * variable.attack_time * 112.0)",
+            "math.sin(variable.first_person_item_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 200.0) * 7.5 - variable.first_person_item_rotation_factor * variable.attack_time * 15.0",
+            "math.sin(variable.first_person_item_rotation_factor * variable.attack_time * 120.0) * 1.75"
+          ],
+          "rotation": [
+            "math.sin(variable.first_person_item_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 280.0) * -60.0",
+            "math.sin(variable.first_person_item_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 280.0) * 40.0",
+            "math.sin(variable.first_person_item_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 280.0) * 20.0"
+          ]
+        }
+      }
+    },
+    "animation.jm.swing.item": {
+      "loop": true,
+      "bones": {
+        "rightitem": {
+          "position": [
+            "-6.4 * math.sin(math.sqrt(variable.attack_time) * 180.0)",
+            "3.2 * math.sin(math.sqrt(variable.attack_time) * 360.0)",
+            "3.2 * math.sin(variable.attack_time * 180.0)"
+          ],
+          "rotation": [
+            {
+              "y": "-45.0 + math.sin(math.pow(variable.attack_time, 2.0) * 180.0) * 20.0"
+            },
+            {
+              "z": "math.sin(math.sqrt(variable.attack_time) * 180.0) * -20.0"
+            },
+            {
+              "x": "math.sin(math.sqrt(variable.attack_time) * 180.0) * 80.0"
+            },
+            {
+              "y": 45
+            }
+          ]
+        }
+      }
+    },
+    "animation.player.first_person.base_pose": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "position": [
+            "-this",
+            0,
+            "-this"
+          ],
+          "rotation": [
+            "query.target_x_rotation - this",
+            "query.target_y_rotation - this",
+            "-this"
+          ]
+        },
+        "waist": {
+          "position": [
+            "-this",
+            0,
+            "-this"
+          ],
+          "rotation": [
+            "-this",
+            "-this",
+            "-this"
+          ]
+        }
+      }
+    },
+    "animation.player.first_person.default_main_hand": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "rightarm": {
+          "position": [
+            "8.5 - this",
+            "-10.0 + variable.short_arm_offset_right",
+            "12.0 - this"
+          ],
+          "rotation": [
+            "95.0 + variable.is_using_vr * 7.5 - this",
+            "-45.0 + variable.is_using_vr * 7.5 - this",
+            "115.0 + variable.is_using_vr * -2.5 - this"
+          ]
+        },
+        "rightitem": {
+          "position": [
+            "-1.0 - this",
+            "-7.0 - this",
+            "-this"
+          ],
+          "rotation": [
+            "-this",
+            "-this",
+            "-this"
+          ]
+        }
+      }
+    },
+    "animation.player.first_person.default_off_hand": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "leftarm": {
+          "position": [
+            "5.0 - this",
+            "variable.short_arm_offset_left",
+            "-this"
+          ],
+          "rotation": [
+            "-this",
+            "-this",
+            "-this"
+          ]
+        },
+        "leftitem": {
+          "position": [
+            "1.0 - this",
+            "-7.0 - this",
+            "-this"
+          ],
+          "rotation": [
+            "-this",
+            "-this",
+            "-this"
+          ]
+        }
+      }
+    },
+    "animation.player.first_person.item_main_hand": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "rightarm": {
+          "position": [
+            "-this",
+            "-22.0 + variable.short_arm_offset_right",
+            "-this"
+          ],
+          "rotation": [
+            "-this",
+            "-this",
+            "-this"
+          ]
+        },
+        "rightitem": {
+          "position": [
+            "8.96 - this",
+            "19.2 - this",
+            "11.52 - this"
+          ],
+          "rotation": [
+            "-this",
+            "180.0 - this",
+            "-this"
+          ]
+        }
+      }
+    },
+    "animation.player.first_person.item_off_hand": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "leftarm": {
+          "position": [
+            "-this",
+            "-22.0 + variable.short_arm_offset_left",
+            "-this"
+          ],
+          "rotation": [
+            "-this",
+            "-this",
+            "-this"
+          ]
+        },
+        "leftitem": {
+          "position": [
+            "-8.96 - this",
+            "19.2 - this",
+            "11.52 - this"
+          ],
+          "rotation": [
+            "-this",
+            "180.0 - this",
+            "-this"
+          ]
+        }
+      }
+    },
+    "animation.player.first_person.swap_item": {
+      "loop": true,
+      "bones": {
+        "leftarm": {
+          "position": [
+            0,
+            "!q.is_item_name_any('slot.weapon.offhand', 'minecraft:filled_map', 'minecraft:map') ? -9.6 * (1.0 - (q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map', 'minecraft:map') && !q.is_item_name_any('slot.weapon.offhand', 'minecraft:shield') ? v.player_arm_height : c.player_offhand_arm_height))",
+            0
+          ],
+          "scale": "v.off_hand_item_visible"
+        },
+        "rightarm": {
+          "position": [
+            0,
+            "-9.6 * (1.0 - variable.player_arm_height)",
+            0
+          ],
+          "scale": "v.main_hand_item_visible"
+        }
+      }
+    },
+    "animation.player.first_person.shield_block": {
+      "loop": true,
+      "bones": {
+        "leftarm": {
+          "position": [
+            0,
+            "!q.is_item_name_any('slot.weapon.offhand', 'minecraft:filled_map', 'minecraft:map') ? -9.6 * (1.0 - (q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map', 'minecraft:map') && !q.is_item_name_any('slot.weapon.offhand', 'minecraft:shield') ? v.player_arm_height : c.player_offhand_arm_height))",
+            0
+          ],
+          "scale": "v.off_hand_item_visible"
+        },
+        "rightarm": {
+          "position": [
+            0,
+            "-9.6 * (1.0 - variable.player_arm_height)",
+            0
+          ],
+          "scale": "v.main_hand_item_visible"
+        }
+      }
+    },
+    "animation.player.first_person.walk": {
+      "loop": true,
+      "bones": {
+        "leftarm": {
+          "position": [
+            "math.sin(-query.walk_distance * 180.0) * variable.hand_bob * 9.75",
+            "-math.abs(math.cos(-query.walk_distance * 180.0)) * variable.hand_bob * 15.0",
+            0
+          ]
+        },
+        "rightarm": {
+          "position": [
+            "math.sin(-query.walk_distance * 180.0) * variable.hand_bob * 9.75",
+            "-math.abs(math.cos(-query.walk_distance * 180.0)) * variable.hand_bob * 15.0",
+            0
+          ]
+        }
+      }
+    }
+  }
+}

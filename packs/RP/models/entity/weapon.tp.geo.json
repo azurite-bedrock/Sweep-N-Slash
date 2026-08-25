@@ -1,0 +1,80 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.jm.weapon.sword.tp",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [0, 0, 0]
+      },
+      "bones": [
+        {
+          "name": "rightitem",
+          "pivot": [0, 0, 0],
+          "texture_meshes": [
+            {
+              "texture": "default",
+              "local_pivot": [6, 0, 7],
+              "position": [0, 0, -9],
+              "rotation": [0, 30, -90],
+              "use_pixel_depth": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.jm.weapon.axe.tp",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [0, 0, 0]
+      },
+      "bones": [
+        {
+          "name": "rightitem",
+          "pivot": [0, 0, 0],
+          "texture_meshes": [
+            {
+              "texture": "default",
+              "local_pivot": [5, 0, 6],
+              "position": [0, 1, -9],
+              "rotation": [-180, 150, 90],
+              "use_pixel_depth": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.jm.weapon.mace.tp",
+        "texture_width": 16,
+        "texture_height": 16,
+        "visible_bounds_width": 4,
+        "visible_bounds_height": 4,
+        "visible_bounds_offset": [0, 0, 0]
+      },
+      "bones": [
+        {
+          "name": "rightitem",
+          "pivot": [0, 0, 0],
+          "texture_meshes": [
+            {
+              "texture": "default",
+              "local_pivot": [5, 0, 6],
+              "position": [0, 1, -9],
+              "rotation": [-180, 150, 90],
+              "use_pixel_depth": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
