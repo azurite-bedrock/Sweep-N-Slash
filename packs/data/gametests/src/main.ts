@@ -5,7 +5,7 @@ import { registerProjectileHandlers } from './handlers/projectile.ts';
 import { registerTickHandlers } from './handlers/tick.ts';
 import { registerStatsLoader } from './stats/loader.ts';
 
-export const VERSION = '3.1.1';
+export const VERSION = '3.2.0';
 
 registerStartupHandlers();
 registerCombatHandlers();
